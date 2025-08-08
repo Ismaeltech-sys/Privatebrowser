@@ -1,0 +1,111 @@
+body {
+    background-color: #000;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 2000px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.audio-container, .pdf-container {
+    background: linear-gradient(160deg, #444 0%, #111 60%, #000 100%);
+    padding: 25px;
+    margin: 20px;
+    width: 1000px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: translateZ(50px);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Contenedor específico para el PDF/imagen */
+.pdf-container {
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1000px;
+    background: linear-gradient(160deg, #444 0%, #111 60%, #000 100%);
+    box-shadow:
+        0 30px 80px 0 rgba(0,0,0,0.85),
+        0 1.5px 6px 0 rgba(80,80,80,0.25),
+        0 0.5px 1.5px 0 rgba(255,255,255,0.08) inset;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    z-index: 2;
+}
+
+/* Efecto 3D/zoom solo en la caja de audio */
+.audio-container:hover {
+    transform: scale(1.08) translateY(-40px);
+    box-shadow:
+        0 80px 180px 0 rgba(0,0,0,0.95),
+        0 20px 40px 0 rgba(80,80,80,0.25),
+        0 1px 3px 0 rgba(255,255,255,0.12) inset;
+}
+
+/* Efecto 3D/zoom solo en la caja de PDF/imagen */
+.pdf-container:hover {
+    transform: scale(1.08) translateY(-40px);
+    box-shadow:
+        0 80px 180px 0 rgba(0,0,0,0.95),
+        0 20px 40px 0 rgba(80,80,80,0.25),
+        0 1px 3px 0 rgba(255,255,255,0.12) inset;
+}
+
+audio {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+/* Imagen ajustada exactamente al ancho de la caja */
+.pdf-viewer {
+    border-radius: 15px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    background-color: transparent;
+    object-position: top;
+    margin: 0 auto;
+}
+
+
+.separator {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    width: 60%;
+    margin: 15px auto;
+}
+
+.audio-container:hover, .pdf-container:hover {
+    transform: translateZ(75px) scale(1.02);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.6),
+        0 15px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 255, 255, 0.15);
+}
