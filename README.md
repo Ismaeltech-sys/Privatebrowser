@@ -61,27 +61,47 @@ Para una configuración óptima de privacidad y seguridad en Brave, la mayoría 
 
 #### Habilitar:
 round-trip-time-rounding
+
 strict-origin-isolation
+
 site-isolation-trial
+
 enable-privacy-budget
+
 fingerprinting-protections
+
 anti-fingerprinting-randomize-headers
+
 improved-cookie-controls
+
 third-party-storage-partitioning
+
 block-outdated-plugins
+
 limit-fingerprinting-headers
+
 enable-side-channel-protection-for-spectre
+
 partition-network-state-by-top-frame-site
+
 webrtc-hide-local-ips-with-mdns
+
 reduce-accept-language
+
 client-hints-capping
+
 enable-ephemeral-storage
+
 block-third-party-cookies
+
 deprecate-old-shadow-pierce-combinators
 
 #### Deshabilitar (para máxima privacidad):
+
 url-keyed-anonymized-metrics
+
 enable-storage-access-api-auto-grant
+
 
 ### Este informe destaca la complejidad y el detalle de las medidas que Brave implementa para proteger la privacidad del usuario, ofreciendo un control granular a través de sus "flags" para aquellos que buscan la máxima protección contra el rastreo y las vulnerabilidades de seguridad.
 Tener en cuenta que también se puede aplicar a navegadores basados en chromium.
